@@ -19,7 +19,7 @@ export const goodsFromServer = [
 enum SortType {
   Default,
   Alphabetical,
-  ByLenght,
+  ByLength,
 }
 
 function getPreparedGoods(
@@ -36,7 +36,7 @@ function getPreparedGoods(
           return goodA.localeCompare(goodB);
         });
         break;
-      case SortType.ByLenght:
+      case SortType.ByLength:
         sortedGoods.sort((goodA: string, goodB: string) => {
           return goodA.length - goodB.length;
         });
@@ -71,9 +71,9 @@ export const App: React.FC = () => {
 
         <button
           type="button"
-          className={`button is-success ${sortType !== SortType.ByLenght && 'is-light'}`}
+          className={`button is-success ${sortType !== SortType.ByLength && 'is-light'}`}
           onClick={() => {
-            setSortType(SortType.ByLenght);
+            setSortType(SortType.ByLength);
           }}
         >
           Sort by length
